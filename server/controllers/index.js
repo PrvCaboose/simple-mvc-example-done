@@ -298,7 +298,6 @@ const updateDog = async (req, res) => {
   if (!req.query.name) {
     return res.status(400).json({ error: 'Name is required to perform a search' });
   }
-
   let doc;
   try {
     doc = await Dog.findOne({ name: req.query.name }).lean().exec();
